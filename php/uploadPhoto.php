@@ -6,18 +6,17 @@ date_default_timezone_set('UTC');
 require '/Users/andrew/Desktop/instagram/vendor/autoload.php';
 
 /////// CONFIG ///////
-$username = 'bot_keklik';
-$password = 'avknjknvdv901nIUO';
+$config = require 'php/config.php';
 $debug = true;
 $truncatedDebug = false;
 //////////////////////
+
 
 /////// MEDIA ////////
 $photoFilename = 'img/pic-ready.png';
 
 $quote = str_replace("\n", " ", file_get_contents('resources/quote.txt', FILE_USE_INCLUDE_PATH));
 $author_s = explode("\n", file_get_contents('resources/author.txt', FILE_USE_INCLUDE_PATH));
-
 $main_text = "👌 #debugging \n";
 
 $captionText = $quote.' – '.$author_s[0].', '.$author_s[1].".\n.\n.\n.\n".$main_text;
@@ -26,7 +25,7 @@ $captionText = $quote.' – '.$author_s[0].', '.$author_s[1].".\n.\n.\n.\n".$mai
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
-    $ig->login($username, $password);
+    $ig->login($conifg['username'], $config['password']);
 } catch (\Exception $e) {
     echo 'Something went wrong: '.$e->getMessage()."\n";
     exit(0);
