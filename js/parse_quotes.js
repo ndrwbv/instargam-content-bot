@@ -5,7 +5,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 
 var opt = {
-  url: 'https://www.brainyquote.com/topics/celebrity',
+  url: 'https://www.goodreads.com/quotes?page=100',
   encoding: null
 }
 
@@ -18,19 +18,43 @@ function parseQuots() {
     var $ = cheerio.load(iconv.decode(body, 'utf8'));
     //bq-aut b-qt
 
-    $(".bq-aut").each(function (i, elem) {
-      authors.push($(this).text());
+  
+    // $(".authorOrTitle").each(function (i, elem) {
+    //   //console.log($(this).text());
+    //   //authors.push($(this).text());
+    // });
+    $(".quoteText").each(function (i, elem) {
+     let array = $(this).text().replace(/\s{2,}/g, ' ').split("”");
+     quotes.push(array[0].replace(" “",""));
+     authors.push(array[1].replace(" ― ", "").split(', ').join("\n"));
     });
-    $(".b-qt").each(function (i, elem) {
-      quotes.push($(this).text());
-    });
+    
+    
+    writeIn('resources/quotes.json',makeJson());
   });
 
   //make quotes in json
   //"0" { 'quote': 'Lorem','author':'John, Coraline' } 
 }
 function makeJson() {
-  return json;
+  var quotes_json = [];
+  for(q in quotes)
+  {
+    var obj = {
+      quote: quotes[q],
+      author: authors[q]
+    };
+    quotes_json.push(obj);
+    
+  }
+  return JSON.stringify(quotes_json, null, 2);
+
+  // let n = JSON.parse(json);
+
+  // for(let i in n ){
+  //   console.log(n[i].quote);
+  //   return 0;
+  // }
 }
 
 function makePadding(source_string) {
@@ -65,6 +89,7 @@ function writeIn(path, data) {
 }
 function getQuote() {
   //parse quotes json
+  
   //get first element
   //write it in resources/quote.txt and in resources/author.txt
   let _author = "Neil Gaiman\nCoraline"
@@ -77,13 +102,7 @@ function getQuote() {
   //write new json
 }
 
-getQuote();
-// if(!empty(file)) getQuote();
-// else{
-//   //promise or set timeout 
-//   parseQuots();
-//   getQuote();
-// } 
-
-
+// if(json.empty) parseQuots();
+// else getQuote();
+parseQuots();
 
