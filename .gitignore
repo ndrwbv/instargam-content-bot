@@ -62,3 +62,5 @@ typings/
 
 #account config
 php/config.php
+
+.DS_Store
