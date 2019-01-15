@@ -49,15 +49,11 @@ function makeJson() {
   }
   return JSON.stringify(quotes_json, null, 2);
 
-  // let n = JSON.parse(json);
-
-  // for(let i in n ){
-  //   console.log(n[i].quote);
-  //   return 0;
-  // }
+  
 }
 
-function makePadding(source_string) {
+function makePadding(source_string, type) {
+  //type pic = 27, book = ?
   let words_counter = 0;
   let indexes = [];
   indexes.push(0);
@@ -88,21 +84,28 @@ function writeIn(path, data) {
   });
 }
 function getQuote() {
-  //parse quotes json
-  
-  //get first element
-  //write it in resources/quote.txt and in resources/author.txt
-  let _author = "Neil Gaiman\nCoraline"
-  let _quote = "“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”";
 
+  let _author = ""
+  let _quote = "";
+  //promise
+  fs.readFile('resources/quotes.json', (err, data) => {  
+    if (err) throw err;
+    let quotes = JSON.parse(data);
+    for(let i in quotes ){
+      _quote = quotes[i].quote;
+      quotes.splice(0,1);
+      break;
+    }
+    let json = JSON.stringify(quotes, null, 2)
+    writeIn('resources/quotes.json',json);
+  });
+  
   writeIn('resources/quote.txt', makePadding(_quote));
   writeIn('resources/author.txt', _author);
   
-  //remove first emlement 
-  //write new json
 }
 
 // if(json.empty) parseQuots();
 // else getQuote();
-parseQuots();
+getQuote();
 
