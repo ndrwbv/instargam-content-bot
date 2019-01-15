@@ -25,7 +25,7 @@ $captionText = $quote.' – '.$author_s[0].', '.$author_s[1].".\n.\n.\n.\n".$mai
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
-    $ig->login($conifg['username'], $config['password']);
+    $ig->login($config['username'], $config['password']);
 } catch (\Exception $e) {
     echo 'Something went wrong: '.$e->getMessage()."\n";
     exit(0);
