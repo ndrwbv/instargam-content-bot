@@ -16,40 +16,29 @@ function parseQuots() {
   request(opt, function (err, res, body) {
     if (err) throw err;
     var $ = cheerio.load(iconv.decode(body, 'utf8'));
-    //bq-aut b-qt
 
-  
-    // $(".authorOrTitle").each(function (i, elem) {
-    //   //console.log($(this).text());
-    //   //authors.push($(this).text());
-    // });
     $(".quoteText").each(function (i, elem) {
      let array = $(this).text().replace(/\s{2,}/g, ' ').split("”");
      quotes.push(array[0].replace(" “",""));
      authors.push(array[1].replace(" ― ", "").split(', ').join("\n"));
     });
     
-    
     writeIn('resources/quotes.json',makeJson());
   });
 
-  //make quotes in json
-  //"0" { 'quote': 'Lorem','author':'John, Coraline' } 
 }
 function makeJson() {
   var quotes_json = [];
   for(q in quotes)
   {
     var obj = {
-      quote: quotes[q],
+      quote: "“" + quotes[q] + "”",
       author: authors[q]
     };
     quotes_json.push(obj);
-    
   }
-  return JSON.stringify(quotes_json, null, 2);
 
-  
+  return JSON.stringify(quotes_json, null, 2);
 }
 
 function makePadding(source_string, type) {
@@ -83,6 +72,7 @@ function writeIn(path, data) {
     console.log("written: " + path);
   });
 }
+
 function getQuote() {
 
   let _author = ""
@@ -91,21 +81,25 @@ function getQuote() {
   fs.readFile('resources/quotes.json', (err, data) => {  
     if (err) throw err;
     let quotes = JSON.parse(data);
+    
+    //тут точно промис надо
+    if(typeof quotes !== 'undefined' && quotes.length > 0){
+      parseQuots();
+    }
     for(let i in quotes ){
       _quote = quotes[i].quote;
+      _author = quotes[i].author;
       quotes.splice(0,1);
       break;
     }
     let json = JSON.stringify(quotes, null, 2)
     writeIn('resources/quotes.json',json);
+
+    writeIn('resources/quote.txt', makePadding(_quote));
+    writeIn('resources/author.txt', _author);
   });
-  
-  writeIn('resources/quote.txt', makePadding(_quote));
-  writeIn('resources/author.txt', _author);
   
 }
 
-// if(json.empty) parseQuots();
-// else getQuote();
 getQuote();
 
