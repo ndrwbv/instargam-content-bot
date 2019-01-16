@@ -48,7 +48,8 @@ function makeJson(quotes) {
 }
 
 function makePadding(source_string, type) {
-  //type pic = 27, book = ?
+  //type pic = 27,mac = 217, book = ?
+  if(source_string.length > 217) source_string = source_string.substring(0,216) + "...”";
   let words_counter = 0;
   let indexes = [];
   indexes.push(0);
