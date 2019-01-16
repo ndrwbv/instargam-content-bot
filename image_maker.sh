@@ -2,6 +2,7 @@
 node js/unsplash_get.js
 convert img/pic-source.png -strokewidth 0 -fill "rgba( 0, 0, 0 , 0.5 )" -draw "rectangle 1080,0 0,1080 " img/pic-1.png 
 echo 'Overlay done.'
+node js/parse_quotes.js
 convert img/pic-1.png -size 1080x1080  -gravity West   \
             -font ~/Downloads/Roboto/Roboto-Light.ttf -stroke  none -fill white -pointsize 40  -annotate +180-446   "$(head -1 resources/author.txt)"  \
             -font ~/Downloads/Roboto/Roboto-Italic.ttf -stroke  none -fill white -pointsize 30  -annotate +180-398  "$(tail -n  +2 resources/author.txt )"  \
@@ -13,5 +14,5 @@ echo 'Quote + author done.'
 composite -geometry  +87+78 assets/rocket.png img/pic-2.png  img/pic-ready.png 
 echo "Picture ready. img/pic-ready.png"
 echo 'Uploading..'
-php php/uploadPhoto.php > instagram.log
+#php php/uploadPhoto.php > instagram.log
 echo 'Uploaded.'

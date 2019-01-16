@@ -23,7 +23,9 @@ function parseQuots() {
       $(".quoteText").each(function (i, elem) {
        let array = $(this).text().replace(/\s{2,}/g, ' ').split("”");
        quotes.push(array[0].replace(" “",""));
-       authors.push(array[1].replace(" ― ", "").split(', ').join("\n"));
+       let temp = array[1].replace(" ― ", "").split(', ')
+       if(temp.length == 1) temp[1] = "Notes";
+       authors.push(temp.join("\n"));
       });
       
       resolve(makeJson(quotes));
