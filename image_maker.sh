@@ -14,5 +14,5 @@ echo 'Quote + author done.'
 composite -geometry  +87+78 assets/rocket.png img/pic-2.png  img/pic-ready.png 
 echo "Picture ready. img/pic-ready.png"
 echo 'Uploading..'
-#php php/uploadPhoto.php > instagram.log
+php php/uploadPhoto.php > instagram.log
 echo 'Uploaded.'

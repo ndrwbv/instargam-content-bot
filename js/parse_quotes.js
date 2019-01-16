@@ -25,6 +25,7 @@ function parseQuots() {
        quotes.push(array[0].replace(" “",""));
        let temp = array[1].replace(" ― ", "").split(', ')
        if(temp.length == 1) temp[1] = "Notes";
+       if(temp.length > 2) temp.splice(2,temp.length);
        authors.push(temp.join("\n"));
       });
       
@@ -48,7 +49,7 @@ function makeJson(quotes) {
 }
 
 function makePadding(source_string, type) {
-  //type pic = 27,mac = 217, book = ?
+  //type pic = 27,max at all = 217, max in line  = 34; book = ?
   if(source_string.length > 217) source_string = source_string.substring(0,216) + "...”";
   let words_counter = 0;
   let indexes = [];
