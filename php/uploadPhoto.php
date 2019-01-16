@@ -19,7 +19,7 @@ $quote = str_replace("\n", " ", file_get_contents('resources/quote.txt', FILE_US
 $author_s = explode("\n", file_get_contents('resources/author.txt', FILE_USE_INCLUDE_PATH));
 $main_text = "👌 #debugging \n";
 
-$captionText = $quote.' – '.$author_s[0].', '.$author_s[1].".\n.\n.\n.\n".$main_text;
+$captionText = $quote.' – '.$author_s[0].', '.$author_s[1]."\n.\n.\n.\n".$main_text;
 //////////////////////
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
