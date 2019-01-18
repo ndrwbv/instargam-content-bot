@@ -50,7 +50,7 @@ function makeJson(quotes) {
 
 function makePadding(source_string, type) {
   //type pic = 27,max at all = 217, max in line  = 34; book = ?
-  if(source_string.length > 217) source_string = source_string.substring(0,216) + "...”";
+
   let words_counter = 0;
   let indexes = [];
   indexes.push(0);
@@ -95,8 +95,17 @@ function getFirstQuote(quotes){
   let json = JSON.stringify(quotes, null, 2);
 
   writeIn('resources/quotes.json',json);
-  writeIn('resources/quote.txt', makePadding(_quote));
-  writeIn('resources/author.txt', _author);
+  console.log(_quote.length);
+  if(_quote.length > 110)
+  {
+    writeIn('resources/is_long.txt', 1);
+    writeIn('resources/quote.txt', _quote);
+  } 
+  else{
+    writeIn('resources/quote.txt', makePadding(_quote));
+    writeIn('resources/is_long.txt', 0);
+    writeIn('resources/author.txt', _author);
+  }
 
 }
 

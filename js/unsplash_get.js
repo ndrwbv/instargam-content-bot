@@ -4,7 +4,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 
 var opt = {
-    url: 'https://source.unsplash.com/1080x1080/?nature',
+    url: 'https://source.unsplash.com/1080x1080/',
     encoding: null
 }
 
