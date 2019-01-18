@@ -11,7 +11,7 @@ var opt = {
 request(opt, function (err, res, body) {
     if (err) throw err;
     var $ = cheerio.load(iconv.decode(body, 'utf8'));
-    fs.writeFile('img/pic-source.png', body, function(err){
+    fs.writeFile('/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-source.png', body, function(err){
         if(err) throw err;
         console.log('img/pic-source.png saved');
     })

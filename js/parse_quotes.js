@@ -8,7 +8,7 @@ var opt = {
   page_number: 0,
   encoding: null
 }
-
+var PATH = '/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/';
 var authors = [];
 var quotes = [];
 
@@ -75,7 +75,7 @@ function makePadding(source_string, type) {
 }
 
 function writeIn(path, data) {
-  fs.writeFile(path, data, function(err){
+  fs.writeFile(PATH+path, data, function(err){
     if(err) throw err;
     console.log("written: " + path);
   });
@@ -109,7 +109,7 @@ function getFirstQuote(quotes){
 
 }
 
-fs.readFile('resources/quotes.json', (err, data) => {  
+fs.readFile(PATH+'resources/quotes.json', (err, data) => {  
   console.log("Reading resources/quotes.json");
   if (err) throw err;
   let quotes = JSON.parse(data);
@@ -117,7 +117,7 @@ fs.readFile('resources/quotes.json', (err, data) => {
   if(quotes.length == 0)
   {
     console.log("Json is empty");
-    fs.readFile('assets/page_number.txt',(err, data) => {
+    fs.readFile(PATH+'assets/page_number.txt',(err, data) => {
       opt.page_number = Number(data);
     
       opt.url += opt.page_number;

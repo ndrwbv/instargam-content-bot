@@ -4,20 +4,22 @@ set_time_limit(0);
 date_default_timezone_set('UTC');
 
 require '/Users/andrew/Desktop/instagram/vendor/autoload.php';
+$PATH = '/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/';
 
 /////// CONFIG ///////
-$config = require 'php/config.php';
+$config = require $PATH.'php/config.php';
 $debug = true;
 $truncatedDebug = false;
 //////////////////////
 
 
 /////// MEDIA ////////
-$photoFilename = 'img/pic-ready.png';
 
-$quote = str_replace("\n", " ", file_get_contents('resources/quote.txt', FILE_USE_INCLUDE_PATH));
-$author_s = explode("\n", file_get_contents('resources/author.txt', FILE_USE_INCLUDE_PATH));
-$main_text = "👌 #debugging \n";
+$photoFilename = $PATH.'img/pic-ready.png';
+
+$quote = str_replace("\n", " ", file_get_contents($PATH.'resources/quote.txt', FILE_USE_INCLUDE_PATH));
+$author_s = explode("\n", file_get_contents($PATH.'resources/author.txt', FILE_USE_INCLUDE_PATH));
+$main_text = "👌 \n";
 
 $captionText = $quote.' – '.$author_s[0].', '.$author_s[1]."\n.\n.\n.\n".$main_text;
 //////////////////////

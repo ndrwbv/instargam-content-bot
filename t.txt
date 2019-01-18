@@ -1,0 +1,142 @@
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+67
+written: resources/quotes.json
+written: resources/author.txt
+written: resources/is_long.txt
+written: resources/quote.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+61
+written: resources/author.txt
+written: resources/is_long.txt
+written: resources/quote.txt
+written: resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+119
+written: resources/quotes.json
+written: resources/quote.txt
+written: resources/is_long.txt
+Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+38
+written: resources/quote.txt
+written: resources/quotes.json
+written: resources/is_long.txt
+written: resources/author.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+98
+written: resources/quote.txt
+written: resources/quotes.json
+written: resources/author.txt
+written: resources/is_long.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+65
+written: resources/quote.txt
+written: resources/quotes.json
+written: resources/is_long.txt
+written: resources/author.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+79
+written: resources/quote.txt
+written: resources/is_long.txt
+written: resources/quotes.json
+written: resources/author.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+309
+written: resources/is_long.txt
+written: resources/quotes.json
+written: resources/quote.txt
+Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
