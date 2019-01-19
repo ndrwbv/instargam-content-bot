@@ -19,9 +19,11 @@ $photoFilename = $PATH.'img/pic-ready.png';
 
 $quote = str_replace("\n", " ", file_get_contents($PATH.'resources/quote.txt', FILE_USE_INCLUDE_PATH));
 $author_s = explode("\n", file_get_contents($PATH.'resources/author.txt', FILE_USE_INCLUDE_PATH));
-$main_text = "👌 \n";
+$author_tags = " #".str_replace(" ", "", $author_s[0])." #".str_replace(" ", "", $author_s[0])."quotes"." #".str_replace(" ", "", $author_s[0])."quote";
+$tags = "#quote #quotes #bookquote #book #unsplash";
+$emojis = ["📚", "📙]", "📘", "📗", "📕", "📒", "📓", "📖" ];
 
-$captionText = $quote.' – '.$author_s[0].', '.$author_s[1]."\n.\n.\n.\n".$main_text;
+$captionText = $emojis[rand(0, 7)].$quote.' – '.$author_s[0].', '.$author_s[1]."\n\nTag someone who needs to read this!"."\n\n\n.\n.\n.\n.\n.\n.\n".$tags.$author_tags;
 //////////////////////
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);

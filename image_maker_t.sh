@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo $(date)
 /usr/local/bin/node /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/js/unsplash_get.js
 /usr/local/bin/convert /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-source.png -strokewidth 0 -fill "rgba( 0, 0, 0 , 0.5 )" -draw "rectangle 1080,0 0,1080 " /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-1.png 
 echo 'Overlay done.'
@@ -21,7 +21,7 @@ else
             -font ~/Downloads/Roboto/Roboto-Italic.ttf -stroke  none -fill white -pointsize 30  -annotate +180-398  "$(tail -n  +2 /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/resources/author.txt )"  \
             -gravity Center \
            -font ~/Downloads/Roboto/Roboto-Medium.ttf -stroke  none -fill white -pointsize 70  -annotate +1+20   "$(cat /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/resources/quote.txt)"  \
-           -font ~/Downloads/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bot_keklik"  \
+           -font ~/Downloads/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bookeklik_"  \
           /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-2.png 
     echo 'Quote + author done.'
     /usr/local/bin/composite -geometry  +87+78 /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/assets/rocket.png /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-2.png  /Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-ready.png 

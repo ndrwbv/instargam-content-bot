@@ -26,6 +26,7 @@ function parseQuots() {
        let temp = array[1].replace(" ― ", "").split(', ')
        if(temp.length == 1) temp[1] = "Notes";
        if(temp.length > 2) temp.splice(2,temp.length);
+       //if(temp[0].length > )
        authors.push(temp.join("\n"));
       });
       
@@ -95,7 +96,7 @@ function getFirstQuote(quotes){
   let json = JSON.stringify(quotes, null, 2);
 
   writeIn('resources/quotes.json',json);
-  console.log(_quote.length);
+  console.log("Length: "+_quote.length);
   if(_quote.length > 110)
   {
     writeIn('resources/is_long.txt', 1);

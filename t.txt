@@ -1,74 +1,92 @@
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
+ Sat Jan 19 01:05:23 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-67
+Length: 42
 written: resources/quotes.json
-written: resources/author.txt
 written: resources/is_long.txt
+written: resources/author.txt
 written: resources/quote.txt
 Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
+Sat Jan 19 02:00:00 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-61
+Length: 59
+written: resources/quote.txt
 written: resources/author.txt
 written: resources/is_long.txt
-written: resources/quote.txt
 written: resources/quotes.json
 Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
+Sat Jan 19 03:00:00 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-119
+Length: 18
+written: resources/quotes.json
+written: resources/author.txt
+written: resources/quote.txt
+written: resources/is_long.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 04:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 130
+written: resources/quote.txt
+written: resources/quotes.json
+written: resources/is_long.txt
+Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 05:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 78
+written: resources/quotes.json
+written: resources/is_long.txt
+written: resources/author.txt
+written: resources/quote.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 06:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 95
+written: resources/quote.txt
+written: resources/author.txt
+written: resources/is_long.txt
+written: resources/quotes.json
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 07:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 179
 written: resources/quotes.json
 written: resources/quote.txt
 written: resources/is_long.txt
@@ -76,67 +94,97 @@ Long Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
+Sat Jan 19 11:00:00 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-38
-written: resources/quote.txt
+Length: 151
 written: resources/quotes.json
+written: resources/is_long.txt
+written: resources/quote.txt
+Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 12:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 90
+written: resources/author.txt
+written: resources/is_long.txt
+written: resources/quotes.json
+written: resources/quote.txt
+Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 17:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 65
+written: resources/quotes.json
+written: resources/quote.txt
 written: resources/is_long.txt
 written: resources/author.txt
 Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
+Sat Jan 19 19:00:00 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-98
-written: resources/quote.txt
+Length: 140
 written: resources/quotes.json
-written: resources/author.txt
+written: resources/quote.txt
 written: resources/is_long.txt
-Quote + author done.
+Long Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
+Sat Jan 19 20:00:00 +07 2019
 img/pic-source.png saved
 Overlay done.
 Reading resources/quotes.json
 Getting first quote..
-65
-written: resources/quote.txt
-written: resources/quotes.json
-written: resources/is_long.txt
-written: resources/author.txt
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Getting first quote..
-79
-written: resources/quote.txt
-written: resources/is_long.txt
-written: resources/quotes.json
-written: resources/author.txt
-Quote + author done.
-Picture ready. img/pic-ready.png
-Uploading..
-Uploaded.
-img/pic-source.png saved
-Overlay done.
-Reading resources/quotes.json
-Getting first quote..
-309
+Length: 124
 written: resources/is_long.txt
 written: resources/quotes.json
 written: resources/quote.txt
 Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 21:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 1464
+written: resources/is_long.txt
+written: resources/quote.txt
+written: resources/quotes.json
+Long Quote + author done.
+Picture ready. img/pic-ready.png
+Uploading..
+Uploaded.
+Sat Jan 19 22:00:00 +07 2019
+img/pic-source.png saved
+Overlay done.
+Reading resources/quotes.json
+Getting first quote..
+Length: 64
+written: resources/quotes.json
+written: resources/is_long.txt
+written: resources/quote.txt
+written: resources/author.txt
+Quote + author done.
 Picture ready. img/pic-ready.png
 Uploading..
 Uploaded.
