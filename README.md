@@ -23,5 +23,6 @@ crontab -l
 ```
 ### scp
 ```bash
-scp php/upload1.php pi@andrew-pi.local:/home/pi/instagram/vendor/mgp25/instagram-php/instargam-content-bot/php/
+scp php/upload1.php 
+pi@andrew-pi.local:/home/pi/instagram/vendor/mgp25/instagram-php/instargam-content-bot/php/
 ```
