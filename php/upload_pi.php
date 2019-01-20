@@ -3,8 +3,8 @@
 set_time_limit(0);
 date_default_timezone_set('UTC');
 
-require '/Users/andrew/Desktop/instagram/vendor/autoload.php';
-$PATH = '/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/';
+require '/home/pi/instagram/vendor/autoload.php';
+$PATH = '/home/pi/instagram/vendor/mgp25/instagram-php/instargam-content-bot/';
 
 /////// CONFIG ///////
 $config = require $PATH.'php/config.php';
