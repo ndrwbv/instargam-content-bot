@@ -2,9 +2,10 @@ var request = require('request');
 var iconv = require('iconv-lite');
 var fs = require('fs');
 var cheerio = require('cheerio');
-
+//https://www.goodreads.com/quotes?page=
+//https://www.goodreads.com/quotes/tag/books?page=
 var opt = {
-  url: 'https://www.goodreads.com/quotes?page=',
+  url: 'https://www.goodreads.com/quotes/tag/books?page=',
   page_number: 0,
   encoding: null
 }
