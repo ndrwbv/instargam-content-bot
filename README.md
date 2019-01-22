@@ -53,5 +53,6 @@ ctrl + A ctr + D
 python3.6 <script.name> >> bot.log &
 ```
 ## Links
-Масс лайкер и масс фоловер: https://github.com/instabot-py/instabot.py
+Масс лайкер и масс фоловер: https://github.com/instabot-py/instabot.py 
+
 Библиотека инстаграмма: https://github.com/mgp25/Instagram-API
