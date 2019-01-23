@@ -20,10 +20,12 @@ $photoFilename = $PATH.'img/pic-ready.png';
 $quote = str_replace("\n", " ", file_get_contents($PATH.'resources/quote.txt', FILE_USE_INCLUDE_PATH));
 $author_s = explode("\n", file_get_contents($PATH.'resources/author.txt', FILE_USE_INCLUDE_PATH));
 $author_tags = " #".str_replace(" ", "", $author_s[0])." #".str_replace(" ", "", $author_s[0])."quotes"." #".str_replace(" ", "", $author_s[0])."quote";
-$tags = "#quote #quotes #bookquote #book #unsplash #bestquotes #dailyquotes #dailyquotesforyou";
-$emojis = ["📚", "📙]", "📘", "📗", "📕", "📒", "📓", "📖" ];
+$tags_ = ["#positive", "#universe", "#inspired", "#positivevibes", "#goodvibes", "#inspirational"]
+$tags = "#quotes #bookquote #book #bestquotes #dailyquotes #bookeklik ".$tags_[rand(0,5)];
+$emojis = ["📚", "📙", "📘", "📗", "📕", "📒", "📓", "📖" ];
+$question_text = ["🔥Tag someone who needs to read this!", "True?", "Agree?", "👏"]
 
-$captionText = $emojis[rand(0, 7)].$quote.' – '.$author_s[0].', '.$author_s[1]."⠀\n🔥Tag someone who needs to read this!\n."."\n.\n.\n.\n.\n.\n".$tags.$author_tags;
+$captionText = $emojis[rand(0, 7)].$quote.' – '.$author_s[0].', '.$author_s[1]."⠀\n".$question_text[rand(0, 3)]."\n."."\n.\n.\n.\n.\n.\n".$tags.$author_tags;
 //////////////////////
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
