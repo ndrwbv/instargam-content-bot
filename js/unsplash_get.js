@@ -7,12 +7,14 @@ var opt = {
     url: 'https://source.unsplash.com/1080x1080/',
     encoding: null
 }
+const PATH = __dirname.substring(0, __dirname.length-3) + '/';
 
 request(opt, function (err, res, body) {
     if (err) throw err;
     var $ = cheerio.load(iconv.decode(body, 'utf8'));
-    fs.writeFile('/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/img/pic-source.png', body, function(err){
+
+    fs.writeFile(PATH + 'img/pic-source.png', body, function(err){
         if(err) throw err;
-        console.log('img/pic-source.png saved');
+        console.log(PATH + 'img/pic-source.png saved');
     })
 });

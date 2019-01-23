@@ -1,0 +1,27 @@
+{
+  "name": "content-maker",
+  "version": "1.0.0",
+  "description": "если json не пустой то выполнится функция getFirstQuote() эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt после парсинга число меняется.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndrwbv/instargam-content-bot.git"
+  },
+  "keywords": [
+    "instagram"
+  ],
+  "author": "Andrew B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndrwbv/instargam-content-bot/issues"
+  },
+  "homepage": "https://github.com/ndrwbv/instargam-content-bot#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.24",
+    "request": "^2.88.0"
+  }
+}

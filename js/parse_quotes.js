@@ -9,7 +9,7 @@ var opt = {
   page_number: 0,
   encoding: null
 }
-var PATH = '/Users/andrew/Desktop/instagram/vendor/mgp25/instagram-php/instargam-content-bot/';
+const PATH = __dirname.substring(0, __dirname.length-3) + '/';
 var authors = [];
 var quotes = [];
 
@@ -17,10 +17,10 @@ function parseQuots() {
   return new Promise(function(resolve, reject){
     console.log("Start parsing..");
     request(opt, function (err, res, body) {
-      
+
       if (err) reject(err);
       var $ = cheerio.load(iconv.decode(body, 'utf8'));
-  
+
       $(".quoteText").each(function (i, elem) {
        let array = $(this).text().replace(/\s{2,}/g, ' ').split("”");
        quotes.push(array[0].replace(" “",""));
@@ -30,9 +30,9 @@ function parseQuots() {
        //if(temp[0].length > )
        authors.push(temp.join("\n"));
       });
-      
+
       resolve(makeJson(quotes));
-  
+
     });
   });
 }
@@ -79,7 +79,7 @@ function makePadding(source_string, type) {
 function writeIn(path, data) {
   fs.writeFile(PATH+path, data, function(err){
     if(err) throw err;
-    console.log("written: " + path);
+    console.log("written: " + PATH + path);
   });
 }
 
@@ -102,7 +102,7 @@ function getFirstQuote(quotes){
   {
     writeIn('resources/is_long.txt', 1);
     writeIn('resources/quote.txt', _quote);
-  } 
+  }
   else{
     writeIn('resources/quote.txt', makePadding(_quote));
     writeIn('resources/is_long.txt', 0);
@@ -111,17 +111,17 @@ function getFirstQuote(quotes){
 
 }
 
-fs.readFile(PATH+'resources/quotes.json', (err, data) => {  
-  console.log("Reading resources/quotes.json");
+fs.readFile(PATH + 'resources/quotes.json', (err, data) => {
+  console.log("Reading: " + PATH + "resources/quotes.json");
   if (err) throw err;
   let quotes = JSON.parse(data);
 
   if(quotes.length == 0)
   {
     console.log("Json is empty");
-    fs.readFile(PATH+'assets/page_number.txt',(err, data) => {
+    fs.readFile(PATH + 'assets/page_number.txt',(err, data) => {
       opt.page_number = Number(data);
-    
+
       opt.url += opt.page_number;
       console.log("Url: " + opt.url);
 
@@ -134,8 +134,7 @@ fs.readFile(PATH+'resources/quotes.json', (err, data) => {
       )
       .catch(err => console.error(err));
     })
-      
+
   }
   else getFirstQuote(quotes);
 });
-
