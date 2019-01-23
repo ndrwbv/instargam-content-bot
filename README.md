@@ -1,10 +1,19 @@
 # instargam-content-bot
+content-maker-and-poster
 ### parse_quotes.js
 если json не пустой то выполнится функция getFirstQuote()
 эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
 если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt
 после парсинга число меняется.
 
+## instalation
+
+```bash
+composer require mgp25/instagram-php
+```
+```npm
+npm install
+```
 ## Server setup
 ### Cron
 Чтобы добавить задачу:
