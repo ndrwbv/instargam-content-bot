@@ -19,7 +19,7 @@ if (($a == 1)); then
            -font $full/resources/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bot_keklik"  \
           $full/img/pic-2.png
  echo 'Long Quote + author done.'
- /usr/local/bin/composite  -gravity Center -geometry  +10-118 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
+ $composite -gravity Center -geometry  +10-118 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
  echo "Picture ready. img/pic-ready.png"
 else
     $convert $full/img/pic-1.png -size 1080x1080  -gravity West   \
@@ -30,7 +30,7 @@ else
            -font $full/resources/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bookeklik_"  \
           $full/img/pic-2.png
     echo 'Quote + author done.'
-    /usr/local/bin/composite -geometry  +87+78 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
+    $composite -geometry  +87+78 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
     echo "Picture ready. img/pic-ready.png"
 fi
 
