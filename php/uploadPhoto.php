@@ -57,7 +57,7 @@ $tags = [
   ],
 ];
 
-$quotes_amount = 9; // without $tags_author.
+$quotes_amount = 7; // without $tags_author.
 
 $tags_author = implode(' ', $tags['author']);
 $tags_all = "";
