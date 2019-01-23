@@ -22,8 +22,7 @@ crontab -e
 ```
 Вставляем эту строку:
 ```bash
-0 1 * * * /home/pi/instagram/vendor/mgp25/instagram-php/instargam-content-bot/image_make_t1.sh >>
-/home/pi/insta_bot.log
+0 1 * * * /home/pi/instagram/start.sh >> /home/pi/insta_bot.log
 ```
 *Обязательно везеде должны быть абсолютные пути.*
 Запускает скрипт каждый день с выводом логов в `insta_bot.log` 
@@ -33,8 +32,7 @@ crontab -l
 ```
 ### scp
 ```bash
-scp php/upload1.php 
-pi@andrew-pi.local:/home/pi/instagram/vendor/mgp25/instagram-php/instargam-content-bot/php/
+scp php/upload1.php pi@andrew-pi.local:/home/pi/
 ```
 
 ### screen
