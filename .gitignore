@@ -67,3 +67,8 @@ php/config.php
 
 composer.phar
 /vendor/
+
+#folders
+resources/
+img/
+assets/

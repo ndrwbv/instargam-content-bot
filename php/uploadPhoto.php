@@ -14,16 +14,68 @@ $truncatedDebug = false;
 
 
 /////// MEDIA ////////
-
 $photoFilename = $PATH.'img/pic-ready.png';
+//////////////////////
 
+function Rand_u($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
+
+//////////////////////
 $quote = str_replace("\n", " ", file_get_contents($PATH.'resources/quote.txt', FILE_USE_INCLUDE_PATH));
 $author_s = explode("\n", file_get_contents($PATH.'resources/author.txt', FILE_USE_INCLUDE_PATH));
-$author_tags = " #".str_replace(" ", "", $author_s[0])." #".str_replace(" ", "", $author_s[0])."quotes"." #".str_replace(" ", "", $author_s[0])."quote";
-$tags = "#quote #quotes #bookquote #book #unsplash #bestquotes #dailyquotes #dailyquotesforyou";
-$emojis = ["📚", "📙]", "📘", "📗", "📕", "📒", "📓", "📖" ];
 
-$captionText = $emojis[rand(0, 7)].$quote.' – '.$author_s[0].', '.$author_s[1]."⠀\n🔥Tag someone who needs to read this!\n."."\n.\n.\n.\n.\n.\n".$tags.$author_tags;
+$emojis = ["📚", "📙", "📘", "📗", "📕", "📒", "📓", "📖" ];
+
+$question_text = [
+  "🔥 Tag someone who needs to read this!",
+  "True?",
+  "Agree?",
+  "👏"];
+
+$tags = [
+  'all' => [
+    "#positive",
+    "#universe",
+    "#inspired",
+    "#positivevibes",
+    "#goodvibes",
+    "#inspirational",
+
+    "#quotes",
+    "#bookquote",
+    "#book",
+    "#bestquotes",
+    "#dailyquotes",
+  ],
+  'author' => [
+    "#".str_replace(" ", "", $author_s[0]),
+    "#".str_replace(" ", "", $author_s[0])."quotes",
+    "#".str_replace(" ", "", $author_s[0])."quote",
+  ],
+];
+
+$quotes_amount = 9; // without $tags_author.
+
+$tags_author = implode(' ', $tags['author']);
+$tags_all = "";
+
+$random_numbers = Rand_u( 0, count($tags['all'])-1, $quotes_amount);
+
+for($i = 0; $i < $quotes_amount; $i++){
+  $tags_all = $tags_all.$tags['all'][$random_numbers[$i]]." ";
+}
+
+$main_text = str_replace(" , ", ", ", $quote.' – '.$author_s[0].', '.$author_s[1]);
+
+$captionText = $emojis[rand(0, 7)]." "
+              .$main_text.".⠀\n"
+              .$question_text[rand(0, 3)]."\n."."\n.\n.\n.\n.\n.\n"
+              .$tags_all
+              .$tags_author;
+
 //////////////////////
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
@@ -36,18 +88,6 @@ try {
 }
 
 try {
-    // The most basic upload command, if you're sure that your photo file is
-    // valid on Instagram (that it fits all requirements), is the following:
-    // $ig->timeline->uploadPhoto($photoFilename, ['caption' => $captionText]);
-
-    // However, if you want to guarantee that the file is valid (correct format,
-    // width, height and aspect ratio), then you can run it through our
-    // automatic photo processing class. It is pretty fast, and only does any
-    // work when the input file is invalid, so you may want to always use it.
-    // You have nothing to worry about, since the class uses temporary files if
-    // the input needs processing, and it never overwrites your original file.
-    //
-    // Also note that it has lots of options, so read its class documentation!
     $photo = new \InstagramAPI\Media\Photo\InstagramPhoto($photoFilename);
     $ig->timeline->uploadPhoto($photo->getFile(), ['caption' => $captionText]);
 } catch (\Exception $e) {
