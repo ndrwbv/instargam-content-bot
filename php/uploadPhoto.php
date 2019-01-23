@@ -54,10 +54,11 @@ $tags = [
     "#".str_replace(" ", "", $author_s[0]),
     "#".str_replace(" ", "", $author_s[0])."quotes",
     "#".str_replace(" ", "", $author_s[0])."quote",
+    "#bookeklik"
   ],
 ];
 
-$quotes_amount = 7; // without $tags_author.
+$quotes_amount = 6; // without $tags_author.
 
 $tags_author = implode(' ', $tags['author']);
 $tags_all = "";
@@ -68,10 +69,9 @@ for($i = 0; $i < $quotes_amount; $i++){
   $tags_all = $tags_all.$tags['all'][$random_numbers[$i]]." ";
 }
 
-$main_text = str_replace(" , ", ", ", $quote.' – '.$author_s[0].', '.$author_s[1]);
+$main_text = str_replace(" .", ".", $quote."\n✏️  ".$author_s[0].".\n".$emojis[rand(0, 7)]." ".$author_s[1]);
 
-$captionText = $emojis[rand(0, 7)]." "
-              .$main_text.".⠀\n"
+$captionText = $main_text."⠀\n"
               .$question_text[rand(0, 3)]."\n."."\n.\n.\n.\n.\n.\n"
               .$tags_all
               .$tags_author;
