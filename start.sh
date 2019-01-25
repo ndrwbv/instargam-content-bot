@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $(date)
 node=`which node`;
-full=`pwd`;
+full=``; # absolute path to script folder. 
 convert=`which convert`;
 composite=`which composite`;
 
