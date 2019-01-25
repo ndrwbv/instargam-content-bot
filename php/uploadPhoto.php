@@ -3,6 +3,7 @@
 set_time_limit(0);
 date_default_timezone_set('UTC');
 
+// Write absolute path's if you're using cron.
 require './vendor/autoload.php';
 $PATH = '';
 
@@ -69,7 +70,7 @@ for($i = 0; $i < $quotes_amount; $i++){
   $tags_all = $tags_all.$tags['all'][$random_numbers[$i]]." ";
 }
 
-$main_text = str_replace(" .", ".", $quote."\n✏️  ".$author_s[0].".\n".$emojis[rand(0, 7)]." ".$author_s[1]);
+$main_text = str_replace(" .", ".", $quote.".\n✏️  ".$author_s[0].".\n".$emojis[rand(0, 7)]." ".$author_s[1]);
 
 $captionText = $main_text."⠀\n"
               .$question_text[rand(0, 3)]."\n."."\n.\n.\n.\n.\n.\n"
