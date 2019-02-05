@@ -55,7 +55,7 @@ $tags = [
     "#".str_replace(" ", "", $author_s[0]),
     "#".str_replace(" ", "", $author_s[0])."quotes",
     "#".str_replace(" ", "", $author_s[0])."quote",
-    "#bookeklik"
+    "#bot_keklik"
   ],
 ];
 

@@ -27,7 +27,7 @@ else
             -font $full/resources/Roboto/Roboto-Italic.ttf -stroke  none -fill white -pointsize 30  -annotate +180-398  "$(tail -n  +2 $full/resources/author.txt )"  \
             -gravity Center \
            -font $full/resources/Roboto/Roboto-Medium.ttf -stroke  none -fill white -pointsize 70  -annotate +1+20   "$(cat $full/resources/quote.txt)"  \
-           -font $full/resources/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bookeklik_"  \
+           -font $full/resources/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bot_keklik"  \
           $full/img/pic-2.png
     echo 'Quote + author done.'
     $composite -geometry  +87+78 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
