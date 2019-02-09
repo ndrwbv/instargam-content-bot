@@ -1,7 +1,7 @@
 const request = require('request');
 const iconv = require('iconv-lite');
 const cheerio = require('cheerio');
-const core = require('./core');
+const core = require('../core/core');
 
 var opt = {
   url: 'https://www.goodreads.com/quotes/tag/books?page=',
@@ -13,7 +13,8 @@ var authors = [];
 var quotes = [];
 
 function parseQuots() {
-  opt.url += core.getPageNum();
+  current_pageNum = core.getPageNum()
+  opt.url += current_pageNum;
   console.log("Url: " + opt.url);
 
   return new Promise(function(resolve, reject){
@@ -33,14 +34,18 @@ function parseQuots() {
        authors.push(temp.join("\n"));
       });
 
-      resolve(core.makeJson(quotes));
+      core.saveData(current_pageNum-1, quotes, authors);
+
+      resolve({"status": "ok"});
 
     });
   });
 }
 
-function getFirstQuote(quotes){
+function getFirstQuote(){
   console.log("Getting first quote..");
+
+  let quotes = core.getJsonData('resources/quotes.json');
   let _author = ""
   let _quote = "";
 
@@ -53,7 +58,7 @@ function getFirstQuote(quotes){
   let json = JSON.stringify(quotes, null, 2);
 
   core.writeIn('resources/quotes.json',json);
-  console.log("Length: "+_quote.length);
+  console.log("Length: " + _quote.length);
   if(_quote.length > 110)
   {
     core.writeIn('resources/is_long.txt', 1);
@@ -66,5 +71,16 @@ function getFirstQuote(quotes){
   }
 
 }
-
-module.exports = { getFirstQuote, parseQuots }
+function getQuote(params) {
+  if(core.isJsonEmpty('resources/text.json')){
+    console.log("Json is empty");
+  
+    parseQuots().then(
+      result => getFirstQuote()
+    )
+    .catch(err => console.error(err));
+  }
+  else getFirstQuote();
+  
+}
+module.exports = { getQuote }

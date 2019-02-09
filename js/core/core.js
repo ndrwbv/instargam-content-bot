@@ -1,8 +1,10 @@
-const PATH = __dirname.substring(0, __dirname.length-7) + '/';
+const PATH = __dirname.substring(0, __dirname.length-7);
 const fs = require('fs');
 
-function makeJson(quotes) {
+
+function makeJson(quotes, authors) {
     console.log("Making json..");
+
     var quotes_json = [];
     for(q in quotes)
     {
@@ -41,15 +43,17 @@ function makePadding(source_string, type) {
     return padding_string.replace(/\n /g ,"\n");
 }  
 
-function writeIn(path, data) {
+function writeIn(path, data, type) {
     fs.writeFile(PATH+path, data, function(err){
       if(err) throw err;
+
       console.log("written: " + PATH + path);
     });
 }
 function isJsonEmpty(path_to_json){
   //resources/quotes.json
   console.log("Reading: " + PATH + path_to_json);
+
   var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
   if(json.length == 0) return true;
   else return false;
@@ -59,6 +63,26 @@ function getPageNum(){
 
   var pages = fs.readFileSync(PATH + 'assets/page_number.txt', 'utf8');
   if(pages.length == 0) throw "Empty file!";
-  else return pages;
+  else return Number(pages);
 }
- module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum}
+function savePageNum(data) {
+  fs.writeFileSync(PATH + 'assets/page_number.txt' , data);
+
+  console.log("written: " + PATH + 'assets/page_number.txt');
+}
+function getJsonData(path_to_json){
+  console.log("Reading: " + PATH + path_to_json);
+
+  var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+  if(json.length == 0) throw "Json empty!";
+  else return json;
+}
+
+function saveData(page, quotes, authors){
+  fs.writeFileSync(PATH + 'resources/quotes.json', makeJson(quotes, authors));
+  console.log("written: " + PATH + 'resources/quotes.json');
+
+  fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
+  console.log("written: " + PATH + 'assets/page_number.txt');
+}
+ module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData}
