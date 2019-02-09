@@ -43,11 +43,12 @@ function makePadding(source_string, type) {
 }  
 
 function writeIn(path, data, type) {
-    fs.writeFile(PATH+path, data, function(err){
-      if(err) throw err;
-
-      console.log("written: " + PATH + path);
-    });
+    // fs.writeFile(PATH+path, data, function(err){
+    //   if(err) throw err;
+    //   console.log("written: " + PATH + path);
+    // });
+    fs.writeFileSync(PATH + path, data);
+    console.log("written: " + PATH + path);
 }
 function isJsonEmpty(path_to_json){
   //resources/quotes.json
@@ -80,5 +81,18 @@ function saveData(page, quotes, authors){
   fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
   console.log("written: " + PATH + 'assets/page_number.txt');
 }
+function saveQuote(quote, author, json) {
+  writeIn('resources/quotes.json',json);
+  if(quote.length > 110)
+  {
+    writeIn('resources/is_long.txt', 1);
+    writeIn('resources/quote.txt', quote);
+  }
+  else{
+    writeIn('resources/quote.txt', makePadding(quote));
+    writeIn('resources/is_long.txt', 0);
+    writeIn('resources/author.txt', author);
+  }
+}
 
-module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData}
+module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData, saveQuote}

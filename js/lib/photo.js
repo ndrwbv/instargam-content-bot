@@ -54,32 +54,22 @@ function getFirstQuote(){
     quotes.splice(0,1);
     break;
   }
-  let json = JSON.stringify(quotes, null, 2);
-
-  core.writeIn('resources/quotes.json',json);
-  console.log("Length: " + _quote.length);
-  if(_quote.length > 110)
-  {
-    core.writeIn('resources/is_long.txt', 1);
-    core.writeIn('resources/quote.txt', _quote);
-  }
-  else{
-    core.writeIn('resources/quote.txt', core.makePadding(_quote));
-    core.writeIn('resources/is_long.txt', 0);
-    core.writeIn('resources/author.txt', _author);
-  }
+ 
+  core.saveQuote(_quote, _author, JSON.stringify(quotes, null, 2));
 
 }
 function getQuote(params) {
-  if(core.isJsonEmpty('resources/quotes.json')){
-    console.log("Json is empty");
-  
-    parseQuots(core.getPageNum()).then(
-      result => getFirstQuote()
-    )
-    .catch(err => console.error(err));
-  }
-  else getFirstQuote();
-  
+  return new Promise(function (resolve, reject) {
+    if(core.isJsonEmpty('resources/quotes.json')){
+      console.log("Json is empty");
+    
+      parseQuots(core.getPageNum()).then(
+        result => resolve(getFirstQuote())
+      )
+      .catch(err => reject(err));
+    }
+    else resolve(getFirstQuote());
+  });
+
 }
 module.exports = { getQuote }
