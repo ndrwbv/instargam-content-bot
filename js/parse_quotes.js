@@ -2,7 +2,8 @@ const photo = require('./lib/photo');
 const core = require('./lib/core');
 
 if(core.isJsonEmpty('resources/text.json')){
-  console.log("empty");
+  console.log("Json is empty");
+  console.log(core.getPageNum());
 }
 // fs.readFile(PATH + 'resources/quotes.json', (err, data) => {
 //   console.log("Reading: " + PATH + "resources/quotes.json");

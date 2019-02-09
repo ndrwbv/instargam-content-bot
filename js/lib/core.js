@@ -50,8 +50,15 @@ function writeIn(path, data) {
 function isJsonEmpty(path_to_json){
   //resources/quotes.json
   console.log("Reading: " + PATH + path_to_json);
-  var config = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
-  if(config.length == 0) return true;
+  var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+  if(json.length == 0) return true;
   else return false;
 }
- module.exports = {writeIn, makePadding, makeJson, isJsonEmpty}
+function getPageNum(){
+  console.log("Reading: " + PATH + 'assets/page_number.txt');
+
+  var pages = fs.readFileSync(PATH + 'assets/page_number.txt', 'utf8');
+  if(pages.length == 0) throw "Empty file!";
+  else return pages;
+}
+ module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum}

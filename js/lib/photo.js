@@ -13,6 +13,9 @@ var authors = [];
 var quotes = [];
 
 function parseQuots() {
+  opt.url += core.getPageNum();
+  console.log("Url: " + opt.url);
+
   return new Promise(function(resolve, reject){
 
     console.log("Start parsing..");
