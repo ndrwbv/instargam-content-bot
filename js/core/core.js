@@ -51,7 +51,6 @@ function writeIn(path, data, type) {
     console.log("written: " + PATH + path);
 }
 function isJsonEmpty(path_to_json){
-  //resources/quotes.json
   console.log("Reading: " + PATH + path_to_json);
 
   var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
@@ -70,8 +69,7 @@ function getJsonData(path_to_json){
   console.log("Reading: " + PATH + path_to_json);
 
   var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
-  if(json.length == 0) throw "Json empty!";
-  else return json;
+  return json;
 }
 
 function saveData(page, quotes, authors){

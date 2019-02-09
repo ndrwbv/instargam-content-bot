@@ -63,12 +63,18 @@ function getQuote(params) {
     if(core.isJsonEmpty('resources/quotes.json')){
       console.log("Json is empty");
     
-      parseQuots(core.getPageNum()).then(
-        result => resolve(getFirstQuote())
-      )
+      parseQuots(core.getPageNum())
+      .then(
+        result => {
+          getFirstQuote();
+          resolve('promise resolved');
+        })
       .catch(err => reject(err));
     }
-    else resolve(getFirstQuote());
+    else {
+      getFirstQuote();
+      resolve('promise resolved');
+    };
   });
 
 }
