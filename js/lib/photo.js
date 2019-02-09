@@ -14,9 +14,9 @@ var quotes = [];
 
 function parseQuots() {
   return new Promise(function(resolve, reject){
+
     console.log("Start parsing..");
     request(opt, function (err, res, body) {
-
       if (err) reject(err);
       var $ = cheerio.load(iconv.decode(body, 'utf8'));
 
@@ -26,7 +26,7 @@ function parseQuots() {
        let temp = array[1].replace(" ― ", "").split(', ')
        if(temp.length == 1) temp[1] = "Notes";
        if(temp.length > 2) temp.splice(2,temp.length);
-       //if(temp[0].length > )
+      
        authors.push(temp.join("\n"));
       });
 

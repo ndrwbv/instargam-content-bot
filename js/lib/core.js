@@ -1,4 +1,4 @@
-const PATH = __dirname.substring(0, __dirname.length-3) + '/';
+const PATH = __dirname.substring(0, __dirname.length-7) + '/';
 const fs = require('fs');
 
 function makeJson(quotes) {
@@ -13,7 +13,7 @@ function makeJson(quotes) {
       quotes_json.push(obj);
     }
     return JSON.stringify(quotes_json, null, 2);
-  }
+}
 
 function makePadding(source_string, type) {
     //type pic = 27,max at all = 217, max in line  = 34; book = ?
@@ -39,13 +39,19 @@ function makePadding(source_string, type) {
     }
   
     return padding_string.replace(/\n /g ,"\n");
-  }  
-
+}  
 
 function writeIn(path, data) {
     fs.writeFile(PATH+path, data, function(err){
       if(err) throw err;
       console.log("written: " + PATH + path);
     });
-  }
-  
+}
+function isJsonEmpty(path_to_json){
+  //resources/quotes.json
+  console.log("Reading: " + PATH + path_to_json);
+  var config = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+  if(config.length == 0) return true;
+  else return false;
+}
+ module.exports = {writeIn, makePadding, makeJson, isJsonEmpty}
