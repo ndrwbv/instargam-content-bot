@@ -95,4 +95,4 @@ function saveQuote(quote, author, json) {
   }
 }
 
-module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData, saveQuote}
+module.exports = {makeJson, isJsonEmpty, getPageNum, saveData, getJsonData, saveQuote}
