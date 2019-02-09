@@ -1,7 +1,6 @@
 const PATH = __dirname.substring(0, __dirname.length-7);
 const fs = require('fs');
 
-
 function makeJson(quotes, authors) {
     console.log("Making json..");
 
@@ -65,11 +64,7 @@ function getPageNum(){
   if(pages.length == 0) throw "Empty file!";
   else return Number(pages);
 }
-function savePageNum(data) {
-  fs.writeFileSync(PATH + 'assets/page_number.txt' , data);
 
-  console.log("written: " + PATH + 'assets/page_number.txt');
-}
 function getJsonData(path_to_json){
   console.log("Reading: " + PATH + path_to_json);
 
@@ -85,4 +80,5 @@ function saveData(page, quotes, authors){
   fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
   console.log("written: " + PATH + 'assets/page_number.txt');
 }
- module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData}
+
+module.exports = {writeIn, makePadding, makeJson, isJsonEmpty, getPageNum, saveData, getJsonData}
