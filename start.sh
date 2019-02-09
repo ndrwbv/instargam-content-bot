@@ -35,5 +35,5 @@ else
 fi
 
 echo 'Uploading..'
-php $full/php/uploadPhoto.php > $full/instagram.log
+php $full/php/uploadPhoto.php > $full/logs/instagram.log
 echo 'Uploaded.'
