@@ -12,8 +12,7 @@ var opt = {
 var authors = [];
 var quotes = [];
 
-function parseQuots() {
-  current_pageNum = core.getPageNum()
+function parseQuots(current_pageNum) {
   opt.url += current_pageNum;
   console.log("Url: " + opt.url);
 
@@ -75,7 +74,7 @@ function getQuote(params) {
   if(core.isJsonEmpty('resources/quotes.json')){
     console.log("Json is empty");
   
-    parseQuots().then(
+    parseQuots(core.getPageNum()).then(
       result => getFirstQuote()
     )
     .catch(err => console.error(err));
