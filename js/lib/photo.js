@@ -72,7 +72,7 @@ function getFirstQuote(){
 
 }
 function getQuote(params) {
-  if(core.isJsonEmpty('resources/text.json')){
+  if(core.isJsonEmpty('resources/quotes.json')){
     console.log("Json is empty");
   
     parseQuots().then(
