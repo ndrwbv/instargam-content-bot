@@ -3,6 +3,10 @@ const iconv = require('iconv-lite');
 const cheerio = require('cheerio');
 const core = require('../core/core');
 
+const Debug = require('./debug');
+var debug = new Debug("photo");
+
+
 var opt = {
   url: 'https://www.goodreads.com/quotes/tag/books?page=',
   page_number: 0,
@@ -14,11 +18,11 @@ var quotes = [];
 
 function parseQuots(current_pageNum) {
   opt.url += current_pageNum;
-  console.log("Url: " + opt.url);
+  debug.log("Url: " + opt.url);
 
   return new Promise(function(resolve, reject){
 
-    console.log("Start parsing..");
+    debug.log("Start parsing..");
     request(opt, function (err, res, body) {
       if (err) reject(err);
       var $ = cheerio.load(iconv.decode(body, 'utf8'));
@@ -34,7 +38,7 @@ function parseQuots(current_pageNum) {
       });
 
       core.saveData(current_pageNum-1, quotes, authors);
-
+     
       resolve({"status": "ok"});
 
     });
@@ -42,7 +46,7 @@ function parseQuots(current_pageNum) {
 }
 
 function getFirstQuote(){
-  console.log("Getting first quote..");
+  debug.log("Getting first quote..");
 
   let quotes = core.getJsonData('resources/quotes.json');
   let _author = ""
@@ -61,7 +65,7 @@ function getFirstQuote(){
 function getQuote(params) {
   return new Promise(function (resolve, reject) {
     if(core.isJsonEmpty('resources/quotes.json')){
-      console.log("Json is empty");
+      debug.log("Json is empty");
     
       parseQuots(core.getPageNum())
       .then(
