@@ -71,13 +71,13 @@ function getQuote(params) {
       .then(
         result => {
           getFirstQuote();
-          resolve('promise resolved');
+          resolve(true);
         })
       .catch(err => reject(err));
     }
     else {
       getFirstQuote();
-      resolve('promise resolved');
+      resolve(true);
     };
   });
 
