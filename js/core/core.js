@@ -50,11 +50,18 @@ function writeIn(path, data, type) {
     debug.file("written: " + path);
 }
 function getPageNum(){
-  debug.file("Reading: " + 'assets/page_number.txt');
-
-  var pages = fs.readFileSync(PATH + 'assets/page_number.txt', 'utf8');
-  if(pages.length == 0) throw "Empty file!";
-  else return Number(pages);
+  const path = 'assets/page_number.txt';
+  debug.file("Reading: " + path);
+  var pages;
+  try{
+    pages = fs.readFileSync(PATH + path, 'utf8');
+  }
+  catch(err){
+    debug.error(path + " not exists");
+    fs.writeFileSync(path, "100");
+    return 100;
+  }
+  return Number(pages);
 }
 
 function getJsonData(path_to_json){
