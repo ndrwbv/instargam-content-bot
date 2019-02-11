@@ -69,10 +69,15 @@ composer.phar
 /vendor/
 
 #folders
-resources/*.txt
+resources/
 img/
 assets/
+
+resources/quote.txt
 
 /resources/
 /img/
 /assets/
+
+
+
