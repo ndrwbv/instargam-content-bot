@@ -72,3 +72,7 @@ composer.phar
 resources/
 img/
 assets/
+
+/resources/
+/img/
+/assets/
