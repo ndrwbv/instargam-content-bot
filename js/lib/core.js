@@ -1,7 +1,7 @@
-const PATH = __dirname.substring(0, __dirname.length-7);
+const PATH = __dirname.substring(0, __dirname.length-6);
 const fs = require('fs');
 
-const Debug = require('../lib/debug');
+const Debug = require('./debug');
 var debug = new Debug("core");
 
 function makeJson(quotes, authors) {

@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const fs = require('fs');
 const PATH = __dirname.substring(0, __dirname.length-8);
 const photo = require('../../js/lib/photo');
-const core = require('../../js/core/core.js');
+const core = require('../../js/lib/core');
 
 describe('PHOTO', function(){
     var source_json = core.getJsonData('assets/quotes.json');

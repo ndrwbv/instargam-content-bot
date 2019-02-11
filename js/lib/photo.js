@@ -1,7 +1,7 @@
 const request = require('request');
 const iconv = require('iconv-lite');
 const cheerio = require('cheerio');
-const core = require('../core/core');
+const core = require('./core');
 
 const Debug = require('./debug');
 var debug = new Debug("photo");
