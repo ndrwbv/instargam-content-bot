@@ -64,9 +64,7 @@ function getFirstQuote(){
 }
 function getQuote(params) {
   return new Promise(function (resolve, reject) {
-    if(core.isJsonEmpty('assets/quotes.json')){
-      debug.log("Json is empty");
-    
+    if(core.getJsonData('assets/quotes.json').length == 0){
       parseQuots(core.getPageNum())
       .then(
         result => {
