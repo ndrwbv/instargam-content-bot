@@ -48,7 +48,7 @@ function parseQuots(current_pageNum) {
 function getFirstQuote(){
   debug.log("Getting first quote..");
 
-  let quotes = core.getJsonData('resources/quotes.json');
+  let quotes = core.getJsonData('assets/quotes.json');
   let _author = ""
   let _quote = "";
 
@@ -64,7 +64,7 @@ function getFirstQuote(){
 }
 function getQuote(params) {
   return new Promise(function (resolve, reject) {
-    if(core.isJsonEmpty('resources/quotes.json')){
+    if(core.isJsonEmpty('assets/quotes.json')){
       debug.log("Json is empty");
     
       parseQuots(core.getPageNum())

@@ -5,12 +5,12 @@ const photo = require('../../js/lib/photo');
 const core = require('../../js/core/core.js');
 
 describe('PHOTO', function(){
-    var source_json = core.getJsonData('resources/quotes.json');
+    var source_json = core.getJsonData('assets/quotes.json');
 
     //dont work if parsing.
     it('Should change quotes.json', async () => {
         var result = await photo.getQuote();
-        let updated = await fs.readFileSync(PATH + 'resources/quotes.json', 'utf8');
+        let updated = await fs.readFileSync(PATH + 'assets/quotes.json', 'utf8');
         assert.notEqual(source_json, updated);
       });
     it('getQuote should return true', async () => {

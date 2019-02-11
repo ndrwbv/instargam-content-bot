@@ -72,14 +72,14 @@ function getJsonData(path_to_json){
 }
 
 function saveData(page, quotes, authors){
-  fs.writeFileSync(PATH + 'resources/quotes.json', makeJson(quotes, authors));
-  debug.file("written: " + 'resources/quotes.json');
+  fs.writeFileSync(PATH + 'assets/quotes.json', makeJson(quotes, authors));
+  debug.file("written: " + 'assets/quotes.json');
 
   fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
   debug.file("written: " + 'assets/page_number.txt');
 }
 function saveQuote(quote, author, json) {
-  writeIn('resources/quotes.json',json);
+  writeIn('assets/quotes.json',json);
   if(quote.length > 110)
   {
     writeIn('resources/is_long.txt', 1);
