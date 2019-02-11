@@ -49,13 +49,6 @@ function writeIn(path, data, type) {
     fs.writeFileSync(PATH + path, data);
     debug.file("written: " + path);
 }
-function isJsonEmpty(path_to_json){
-  debug.file("Reading: " + path_to_json);
-
-  var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
-  if(json.length == 0) return true;
-  else return false;
-}
 function getPageNum(){
   debug.file("Reading: " + 'assets/page_number.txt');
 
@@ -66,8 +59,15 @@ function getPageNum(){
 
 function getJsonData(path_to_json){
   debug.file("Reading: " + path_to_json);
-
-  var json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+  var json;
+  try{
+    json= JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+  }
+  catch(err){
+    debug.error(path_to_json + " not exists");
+    fs.writeFileSync(path_to_json, "[]");
+    return JSON.parse("[]");
+  }
   return json;
 }
 
@@ -92,4 +92,4 @@ function saveQuote(quote, author, json) {
   }
 }
 
-module.exports = {makeJson, isJsonEmpty, getPageNum, saveData, getJsonData, saveQuote}
+module.exports = {makeJson, getPageNum, saveData, getJsonData, saveQuote}
