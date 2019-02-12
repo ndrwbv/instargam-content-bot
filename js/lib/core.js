@@ -46,7 +46,7 @@ function makePadding(source_string, type) {
 }  
 
 function getPageNum(){
-  const path = 'assets/page_number.txt';
+  const path = 'resources/page_number.txt';
   debug.file("Reading: " + path);
   var pages;
   try{
@@ -75,13 +75,13 @@ function getJsonData(path_to_json){
 }
 
 function saveData(page, quotes, authors){
-  fs.writeFileSync(PATH + 'assets/quotes.json', makeJson(quotes, authors));
-  fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
-  debug.file("Assets saved");
+  fs.writeFileSync(PATH + 'resources/quotes.json', makeJson(quotes, authors));
+  fs.writeFileSync(PATH + 'resources/page_number.txt' , page);
+  debug.file("Data saved");
 }
 
 function saveQuote(quote, author, json) {
-  fs.writeFileSync(PATH + 'assets/quotes.json', json);
+  fs.writeFileSync(PATH + 'resources/quotes.json', json);
   if(quote.length > 110)
   {
     fs.writeFileSync(PATH + 'resources/is_long.txt', 1);
@@ -93,7 +93,7 @@ function saveQuote(quote, author, json) {
     fs.writeFileSync(PATH + 'resources/author.txt', author);
   }
 
-  debug.file("Resources saved");
+  debug.file("Quote saved");
 }
 
 module.exports = { getPageNum, saveData, getJsonData, saveQuote }

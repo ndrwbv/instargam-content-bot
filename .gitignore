@@ -71,13 +71,9 @@ composer.phar
 #folders
 resources/
 img/
-assets/
-
-resources/quote.txt
 
 /resources/
 /img/
-/assets/
 
 
 
