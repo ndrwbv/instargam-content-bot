@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $(date)
 node=`which node`;
-full=""; # absolute path to script folder. 
+full=`pwd`; # absolute path to script folder. 
 convert=`which convert`;
 composite=`which composite`;
 
@@ -25,13 +25,8 @@ else
             -font $full/assets/Roboto/Roboto-Light.ttf -stroke  none -fill white -pointsize 40  -annotate +180-446   "$(head -1 $full/resources/author.txt)"  \
             -font $full/assets/Roboto/Roboto-Italic.ttf -stroke  none -fill white -pointsize 30  -annotate +180-398  "$(tail -n  +2 $full/resources/author.txt )"  \
             -gravity Center \
-<<<<<<< HEAD
-           -font $full/resources/Roboto/Roboto-Medium.ttf -stroke  none -fill white -pointsize 70  -annotate +1+20   "$(cat $full/resources/quote.txt)"  \
-           -font $full/resources/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bot_keklik"  \
-=======
            -font $full/assets/Roboto/Roboto-Medium.ttf -stroke  none -fill white -pointsize 70  -annotate +1+20   "$(cat $full/resources/quote.txt)"  \
            -font $full/assets/Roboto/Roboto-Thin.ttf -stroke  none -fill white -pointsize 30  -annotate +1+500   "@bot_keklik"  \
->>>>>>> dev
           $full/img/pic-2.png
     $composite -geometry  +87+78 $full/assets/rocket.png $full/img/pic-2.png  $full/img/pic-ready.png
     echo "  sh:out Picture ready for upload."
