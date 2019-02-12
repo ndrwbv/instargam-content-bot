@@ -64,7 +64,7 @@ function getJsonData(path_to_json){
   debug.file("Reading: " + path_to_json);
   var json;
   try{
-    json= JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
+    json = JSON.parse(fs.readFileSync(PATH + path_to_json, 'utf8'));
   }
   catch(err){
     debug.error(path_to_json + " not exists");

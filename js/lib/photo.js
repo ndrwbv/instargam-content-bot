@@ -6,7 +6,6 @@ const core = require('./core');
 const Debug = require('./debug');
 var debug = new Debug("photo");
 
-
 var opt = {
   url: 'https://www.goodreads.com/quotes/tag/books?page=',
   page_number: 0,
