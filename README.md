@@ -6,7 +6,24 @@ content-maker-and-poster
 в `photo.js` логика работы создания обычного поста
 
 в `debug.js` экспортируемый класс для красивого вывода в консоль
-### config.php
+
+# Usage
+```
+git clone https://github.com/ndrwbv/instargam-content-bot
+cd instargam-content-bot
+mkdir img resources
+```
+## Set up
+```bash
+composer require mgp25/instagram-php
+npm install
+```
+## Run
+```bash
+./start.sh
+```
+## config.php
+Нужно создать файл конфига, в котором будет хранится логин и пароль от инстаграма.
 ```php
 <?php
 return [
@@ -14,20 +31,14 @@ return [
     "password" => "yourPassword"
 ];
 ```
+
 ## getQuote()
 если json не пустой то выполнится функция getFirstQuote()
 эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
 если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt
 после парсинга число меняется.
 
-## instalation
 
-```bash
-composer require mgp25/instagram-php
-```
-```npm
-npm install
-```
 ## Server setup
 ### Cron
 Чтобы добавить задачу:
