@@ -4,7 +4,14 @@ content-maker-and-poster
 в `core.js` хранятся функции по работе с файловой системой
 
 в `photo.js` логика работы создания обычного поста
-
+### config.php
+```php
+<?php
+return [
+    "username" => "yourName",
+    "password" => "yourPassword"
+];
+```
 ### parse_quotes.js
 если json не пустой то выполнится функция getFirstQuote()
 эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
