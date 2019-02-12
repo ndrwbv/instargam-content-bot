@@ -1,6 +1,20 @@
 # instargam-content-bot
 content-maker-and-poster
-### parse_quotes.js
+
+в `core.js` хранятся функции по работе с файловой системой
+
+в `photo.js` логика работы создания обычного поста
+
+в `debug.js` экспортируемый класс для красивого вывода в консоль
+### config.php
+```php
+<?php
+return [
+    "username" => "yourName",
+    "password" => "yourPassword"
+];
+```
+## getQuote()
 если json не пустой то выполнится функция getFirstQuote()
 эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
 если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt

@@ -4,7 +4,7 @@
   "description": "если json не пустой то выполнится функция getFirstQuote() эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt после парсинга число меняется.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,12 @@
     "cheerio": "^1.0.0-rc.2",
     "iconv-lite": "^0.4.24",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

@@ -15,6 +15,6 @@ request(opt, function (err, res, body) {
 
     fs.writeFile(PATH + 'img/pic-source.png', body, function(err){
         if(err) throw err;
-        console.log(PATH + 'img/pic-source.png saved');
+        console.log('  unsplash:out Picture saved.');
     })
 });

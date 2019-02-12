@@ -71,4 +71,10 @@ composer.phar
 #folders
 resources/
 img/
-assets/
+
+/resources/
+/img/
+
+
+
+*.txt
