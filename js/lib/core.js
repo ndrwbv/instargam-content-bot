@@ -45,10 +45,6 @@ function makePadding(source_string, type) {
     return padding_string.replace(/\n /g ,"\n");
 }  
 
-function writeIn(path, data, type) {
-    fs.writeFileSync(PATH + path, data);
-    debug.file("written: " + path);
-}
 function getPageNum(){
   const path = 'assets/page_number.txt';
   debug.file("Reading: " + path);
@@ -80,23 +76,24 @@ function getJsonData(path_to_json){
 
 function saveData(page, quotes, authors){
   fs.writeFileSync(PATH + 'assets/quotes.json', makeJson(quotes, authors));
-  debug.file("written: " + 'assets/quotes.json');
-
   fs.writeFileSync(PATH + 'assets/page_number.txt' , page);
-  debug.file("written: " + 'assets/page_number.txt');
+  debug.file("Assets saved");
 }
+
 function saveQuote(quote, author, json) {
-  writeIn('assets/quotes.json',json);
+  fs.writeFileSync(PATH + 'assets/quotes.json', json);
   if(quote.length > 110)
   {
-    writeIn('resources/is_long.txt', 1);
-    writeIn('resources/quote.txt', quote);
+    fs.writeFileSync(PATH + 'resources/is_long.txt', 1);
+    fs.writeFileSync(PATH + 'resources/quote.txt', quote);
   }
   else{
-    writeIn('resources/quote.txt', makePadding(quote));
-    writeIn('resources/is_long.txt', 0);
-    writeIn('resources/author.txt', author);
+    fs.writeFileSync(PATH + 'resources/quote.txt', makePadding(quote));
+    fs.writeFileSync(PATH + 'resources/is_long.txt', 0);
+    fs.writeFileSync(PATH + 'resources/author.txt', author);
   }
+
+  debug.file("Resources saved");
 }
 
-module.exports = {makeJson, getPageNum, saveData, getJsonData, saveQuote}
+module.exports = { getPageNum, saveData, getJsonData, saveQuote }
