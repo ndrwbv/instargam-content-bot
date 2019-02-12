@@ -11,7 +11,7 @@ content-maker-and-poster
 ```
 git clone https://github.com/ndrwbv/instargam-content-bot
 cd instargam-content-bot
-mkdir img resources
+mkdir img resources logs
 ```
 ## Set up
 ```bash
