@@ -31,10 +31,10 @@ $author_s = explode("\n", file_get_contents($PATH.'resources/author.txt', FILE_U
 $emojis = ["📚", "📙", "📘", "📗", "📕", "📒", "📓", "📖" ];
 
 $question_text = [
-  "🔥 Tag someone who needs to read this!",
-  "True?",
-  "Agree?",
-  "👏"];
+  "🔥 Tag someone who needs to read this!\nFollow @bot_keklik for more!",
+  "Do you agree?\nFollow @bot_keklik for more!",
+  "👏\nFollow @bot_keklik for more!"
+];
 
 $tags = [
   'all' => [
@@ -55,7 +55,7 @@ $tags = [
     "#".str_replace(" ", "", $author_s[0]),
     "#".str_replace(" ", "", $author_s[0])."quotes",
     "#".str_replace(" ", "", $author_s[0])."quote",
-    "#bookeklik"
+    "#bot_keklik"
   ],
 ];
 
