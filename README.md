@@ -7,23 +7,18 @@ content-maker-and-poster
 
 в `debug.js` экспортируемый класс для красивого вывода в консоль
 
-# Usage
+## Usage
 ```
 git clone https://github.com/ndrwbv/instargam-content-bot
 cd instargam-content-bot
 mkdir img resources logs
 ```
-## Set up
+### Set up
 ```bash
 composer require mgp25/instagram-php
 npm install
 ```
-## Run
-```bash
-./start.sh
-```
-## config.php
-Нужно создать файл конфига, в котором будет хранится логин и пароль от инстаграма.
+Так же, нужно создать файл конфига в папке `php/`, в котором будет хранится логин и пароль от инстаграма.
 ```php
 <?php
 return [
@@ -31,7 +26,10 @@ return [
     "password" => "yourPassword"
 ];
 ```
-
+### Run
+```bash
+./start.sh
+```
 ## getQuote()
 если json не пустой то выполнится функция getFirstQuote()
 эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
@@ -40,17 +38,18 @@ return [
 
 
 ## Server setup
+
 ### Cron
+Для того, чтобы использовать cron, нужно прописать абсолютный путь в переменную `$full` в `start.sh`, а так же в переменную `PATH` в uploadPhoto.php и в `require './vendor/autoload.php'`.
+
 Чтобы добавить задачу:
 ```bash
 crontab -e
 ```
-Вставляем эту строку:
+Для того чтобы исполнять задачу каждый день вставляем эту строку: 
 ```bash
-0 1 * * * /home/pi/instagram/start.sh >> /home/pi/insta_bot.log
+0 1 * * * /home/pi/instagram/start.sh >> /home/pi/logs/insta_bot.log
 ```
-*Обязательно везеде должны быть абсолютные пути.*
-Запускает скрипт каждый день с выводом логов в `insta_bot.log` 
 Проверить что задача добавилась:
 ```bash
 crontab -l
