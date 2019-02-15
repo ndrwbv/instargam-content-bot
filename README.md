@@ -8,18 +8,18 @@
 ## Instalation
 
 ```
-wget https://github.com/ndrwbv/instargam-content-bot/archive/1.0.zip
-unzip 1.0.zip
-cd instargam-content-bot-1.0
+wget https://github.com/ndrwbv/instargam-content-bot/archive/1.1.zip
+unzip 1.1.zip
+cd instargam-content-bot-1.1
 ./init.sh
 ```
 *Установка производится с помощью composer и npm*
 
 ## I don't have composer
 ```
-wget https://github.com/ndrwbv/instargam-content-bot/releases/download/1.0/icb-v1.0-full.zip
-unzip icb-v1.0-full.zip
-cd instargam-content-bot
+wget https://github.com/ndrwbv/instargam-content-bot/releases/download/1.1/instargam-content-bot-full.zip
+unzip instargam-content-bot-full.zip
+cd instargam-content-bot-full
 ./init.sh
 ```
 ### Run
