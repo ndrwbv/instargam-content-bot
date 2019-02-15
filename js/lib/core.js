@@ -86,6 +86,7 @@ function saveQuote(quote, author, json) {
   {
     fs.writeFileSync(PATH + 'resources/is_long.txt', 1);
     fs.writeFileSync(PATH + 'resources/quote.txt', quote);
+    fs.writeFileSync(PATH + 'resources/author.txt', author);
   }
   else{
     fs.writeFileSync(PATH + 'resources/quote.txt', makePadding(quote));
