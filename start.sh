@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $(date)
 node=`which node`;
-full=""; # absolute path to script folder. 
+full=`pwd`; # Change to absolute path when using cron (see readme guide). 
 convert=`which convert`;
 composite=`which composite`;
 
