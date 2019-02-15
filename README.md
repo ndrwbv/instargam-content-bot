@@ -1,11 +1,11 @@
-# Что это?
+## Что это?
 Это бот. Он получает цитаты с сайта https://www.goodreads.com, красиво их оформляет используя фотографии с unspash, делает подпись, добавляет хештеги и выкладывает в инстаграм.
 
 <img src="https://lh4.googleusercontent.com/juVqEgPJR80RR8G1KAUKlubVQJNlef6qFmOZXMUNtiQnShJUWu82fmSyYJado6TRAz245RWGbWcJi77H1hO-=w2880-h1642-rw" width="850" title="https://www.instagram.com/bot_keklik/">
 
 Ссылка на профиль: https://www.instagram.com/bot_keklik/
 
-## Instalation
+### Instalation
 
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/archive/1.1.zip
@@ -15,7 +15,7 @@ cd instargam-content-bot-1.1
 ```
 *Установка производится с помощью composer и npm*
 
-## I don't have composer
+### I don't have composer
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/releases/download/1.1/instargam-content-bot-full.zip
 unzip instargam-content-bot-full.zip
