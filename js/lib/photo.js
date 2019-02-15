@@ -15,6 +15,16 @@ var opt = {
 var authors = [];
 var quotes = [];
 
+/*
+  * getQuote()
+  * если json не пустой то выполнится функция getFirstQuote()
+  * эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
+  * если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt
+  * после парсинга число меняется.
+  * 
+  * В данном файле photo.js хранится вся логика для создания поста.
+*/
+
 function parseQuots(current_pageNum) {
   opt.url += current_pageNum;
   debug.log("Url: " + opt.url);
