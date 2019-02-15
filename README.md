@@ -9,7 +9,7 @@ https://www.instagram.com/bot_keklik/
 
 ## Usage
 ```
-git clone https://github.com/ndrwbv/instargam-content-bot
+git clone https://github.com/ndrwbv/instargam-content-bot/archive/1.0.zip
 cd instargam-content-bot
 mkdir img resources logs
 ```
