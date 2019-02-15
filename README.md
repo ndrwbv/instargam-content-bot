@@ -1,48 +1,31 @@
-# instargam-content-bot
-https://www.instagram.com/bot_keklik/
+# Что это?
+Это бот. Он получает цитаты с сайта https://www.goodreads.com, красиво их оформляет используя фотографии с unspash, делает подпись, добавляет хештеги и выкладывает в инстаграм.
 
-в `core.js` хранятся функции по работе с файловой системой
+<img src="https://lh4.googleusercontent.com/juVqEgPJR80RR8G1KAUKlubVQJNlef6qFmOZXMUNtiQnShJUWu82fmSyYJado6TRAz245RWGbWcJi77H1hO-=w2880-h1642-rw" width="850" title="https://www.instagram.com/bot_keklik/">
 
-в `photo.js` логика работы создания обычного поста
+Ссылка на профиль: https://www.instagram.com/bot_keklik/
 
-в `debug.js` экспортируемый класс для красивого вывода в консоль
+## Instalation
 
-## Usage
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/archive/1.0.zip
 unzip 1.0.zip
 cd instargam-content-bot-1.0
-mkdir img resources logs
+./init.sh
 ```
-### Set up
-```bash
-composer require mgp25/instagram-php
-npm install
-```
+*Установка производится с помощью composer и npm*
+
 ## I don't have composer
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/releases/download/1.0/icb-v1.0-full.zip
 unzip icb-v1.0-full.zip
 cd instargam-content-bot
-```
-Так же, нужно создать файл конфига в папке `php/`, в котором будет хранится логин и пароль от инстаграма.
-```php
-<?php
-return [
-    "username" => "yourName",
-    "password" => "yourPassword"
-];
+./init.sh
 ```
 ### Run
 ```bash
 ./start.sh
 ```
-## getQuote()
-если json не пустой то выполнится функция getFirstQuote()
-эта функция вырезает первую строку из json, раскидывает ее по файлам и перезаписывает json
-если json пустой то парсятся цитаты с учетом последнего номера страницы, который хранится в page_number.txt
-после парсинга число меняется.
-
 
 ## Server setup
 
@@ -61,36 +44,6 @@ crontab -e
 ```bash
 crontab -l
 ```
-### scp
-```bash
-scp php/upload1.php pi@andrew-pi.local:/home/pi/
-```
 
-### screen
-```bash
-sudo apt-get install screen 
-```
-Список доступных сессий:
-```bash
-screen -ls
-```
-Создать сессию:
-```bash
-screen -S <NAME SESSSION>
-```
-Перейти в сессию:
-```bash
-screen -r <NUMBER>
-```
-Попасть из одной сессии в другую:
-```bash
-ctrl + A ctr + D 
-```
-Добавить скрипт в процессы:
-```bash
-python3.6 <script.name> >> bot.log &
-```
 ## Links
-Масс лайкер и масс фоловер: https://github.com/instabot-py/instabot.py 
-
 Библиотека инстаграмма: https://github.com/mgp25/Instagram-API
