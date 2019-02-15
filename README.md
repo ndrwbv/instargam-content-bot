@@ -10,13 +10,20 @@ https://www.instagram.com/bot_keklik/
 ## Usage
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/archive/1.0.zip
-cd instargam-content-bot
+unzip 1.0.zip
+cd instargam-content-bot-1.0
 mkdir img resources logs
 ```
 ### Set up
 ```bash
 composer require mgp25/instagram-php
 npm install
+```
+## I don't have composer
+```
+wget https://github.com/ndrwbv/instargam-content-bot/releases/download/1.0/icb-v1.0-full.zip
+unzip icb-v1.0-full.zip
+cd instargam-content-bot
 ```
 Так же, нужно создать файл конфига в папке `php/`, в котором будет хранится логин и пароль от инстаграма.
 ```php
