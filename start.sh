@@ -34,4 +34,4 @@ fi
 
 echo '  sh:out Uploading..'
 php $full/php/uploadPhoto.php > $full/logs/instagram.log
-echo '  sh:out Uploaded.'
+echo '  sh:out See logs/instagram.log'

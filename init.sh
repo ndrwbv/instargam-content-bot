@@ -14,5 +14,5 @@ if [ ! -f php/config.php ]; then
     'username' => '$uservar',
     'password' =>  '$passvar'
   ];" >> php/config.php
-  echo "Installation finished."
 fi
+echo "Installation finished."
