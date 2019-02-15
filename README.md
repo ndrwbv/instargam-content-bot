@@ -1,7 +1,7 @@
 ## Что это?
 Это бот. Он получает цитаты с сайта https://www.goodreads.com, красиво их оформляет используя фотографии с unspash, делает подпись, добавляет хештеги и выкладывает в инстаграм.
 
-<img src="https://lh4.googleusercontent.com/juVqEgPJR80RR8G1KAUKlubVQJNlef6qFmOZXMUNtiQnShJUWu82fmSyYJado6TRAz245RWGbWcJi77H1hO-=w2880-h1642-rw" width="850" title="https://www.instagram.com/bot_keklik/">
+<img src="https://github.com/ndrwbv/instargam-content-bot/blob/master/Screen%20Shot%202019-02-15%20at%2015.51.43.png" width="850" title="https://www.instagram.com/bot_keklik/">
 
 Ссылка на профиль: https://www.instagram.com/bot_keklik/
 
