@@ -1,5 +1,5 @@
 # instargam-content-bot
-content-maker-and-poster
+https://www.instagram.com/bot_keklik/
 
 в `core.js` хранятся функции по работе с файловой системой
 
