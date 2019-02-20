@@ -5,7 +5,7 @@ This is a bot. It draw quotes from https://www.goodreads.com on pictures from un
 
 ## Dependencies
 * convert
-* Instagram-API-PHP
+* Instagram-API (PHP)
 * cheerio
 * iconv-lite
 * request
@@ -50,5 +50,6 @@ crontab -l
 
 ## Links
 Profile: https://www.instagram.com/bot_keklik/
-Instagram-API php: https://github.com/mgp25/Instagram-API
+
+Instagram-API (PHP): https://github.com/mgp25/Instagram-API
 
