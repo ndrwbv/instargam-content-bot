@@ -1,19 +1,23 @@
-## Что это?
-Это бот. Он получает цитаты с сайта https://www.goodreads.com, красиво их оформляет используя фотографии с unspash, делает подпись, добавляет хештеги и выкладывает в инстаграм.
+## What is it?
+This is a bot. It draw quotes from https://www.goodreads.com on pictures from unsplash, then adds description, hashtags and post it in instagram.
 
 <img src="https://github.com/ndrwbv/instargam-content-bot/blob/master/Screen%20Shot%202019-02-15%20at%2015.51.43.png" width="850" title="https://www.instagram.com/bot_keklik/">
 
-Ссылка на профиль: https://www.instagram.com/bot_keklik/
+## Dependencies
+* convert
+* Instagram-API-PHP
+* cheerio
+* iconv-lite
+* request
 
-### Instalation
-
+## Instalation
 ```
 wget https://github.com/ndrwbv/instargam-content-bot/archive/1.1.zip
 unzip 1.1.zip
 cd instargam-content-bot-1.1
 ./init.sh
 ```
-*Установка производится с помощью composer и npm*
+*npm and composer required*
 
 ### I don't have composer
 ```
@@ -22,28 +26,29 @@ unzip instargam-content-bot-full.zip
 cd instargam-content-bot-full
 ./init.sh
 ```
-### Run
+## Run
 ```bash
 ./start.sh
 ```
 
 ## Server setup
-
 ### Cron
-Для того, чтобы использовать cron, нужно прописать абсолютный путь в переменную `$full` в `start.sh`, а так же в переменную `PATH` в uploadPhoto.php и в `require './vendor/autoload.php'`.
+To use cron, you need to set absolute path to variable `$full` in `start.sh`, as well as `PATH` in uploadPhoto.php and in` require './Vendor/autoload.php'`,
 
-Чтобы добавить задачу:
+To add task:
 ```bash
 crontab -e
 ```
-Для того чтобы исполнять задачу каждый день вставляем эту строку: 
+To run task every day:
 ```bash
 0 1 * * * /home/pi/instagram/start.sh >> /home/pi/logs/insta_bot.log
 ```
-Проверить что задача добавилась:
+Check that the task has been added:
 ```bash
 crontab -l
 ```
 
 ## Links
-Библиотека инстаграмма: https://github.com/mgp25/Instagram-API
+Profile: https://www.instagram.com/bot_keklik/
+Instagram-API php: https://github.com/mgp25/Instagram-API
+
