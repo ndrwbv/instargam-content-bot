@@ -1,7 +1,7 @@
 ## What is it?
 This is a bot. It draw quotes from https://www.goodreads.com on pictures from unsplash, then adds description, hashtags and post it in instagram.
 
-<img src="https://github.com/ndrwbv/instargam-content-bot/blob/master/Screen%20Shot%202019-02-15%20at%2015.51.43.png" width="850" title="https://www.instagram.com/bot_keklik/">
+<img src="https://github.com/ndrwbv/instargam-content-bot/blob/master/preview.jpg" width="850" title="https://www.instagram.com/bot_keklik/">
 
 ## Dependencies
 * convert
